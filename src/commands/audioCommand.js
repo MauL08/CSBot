@@ -3,37 +3,6 @@ const ytdl = require('ytdl-core');
 const PREFIX = '$';
 var serversQueue = {};
 
-// var ytLink;
-
-// const ytSearch = (message, content) => {
-//     var options = {
-//         url: "http://results.dogpile.com/serp?qc=video&q=" + content,
-//         method: "GET",
-//         headers: {
-//             "Accept": "text/html",
-//             "User-Agent": "Chrome"
-//         }
-//     };
-
-//     request(options, (err, response, responseBody) => {
-//         if (err) return;
-
-//         $ = cheerio.load(responseBody);
-
-//         var links = $(".video a.title");
-
-//         var urls = new Array(links.length)
-//             .fill(0)
-//             .map((value, index) => links.eq(index).attr("href"));
-
-//         if (!urls.length) return;
-
-//         ytLink = urls[0];
-//     })
-    
-//     return ytLink;
-// }
-
 module.exports = {
     audioCommand: function (message) {
         if (message.author.bot) return;

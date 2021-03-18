@@ -18,11 +18,14 @@
     * Video Search
     * News Search
 
-## 4) **Version 1.3 (Latest)**
+## 4) **Version 1.3**
 * Change Image Search API.
 * Adding Wikipedia Search Feature --> (Special Thanks to 'Tech Tip Cyber' on YouTube).
 * Adding Google Search Feature.
 * Changing Name to 'CSBot'.
 * Removing News & Video Search Function (Unfixed Bugs).
+
+## 5) **Version 1.4 (Latest)**
+* Cleaning some bad codes.
 
 ### More Features Coming Soon :)

@@ -23,7 +23,6 @@ module.exports = {
             .split(/\s+/)
         switch(command) {
             case 'img':
-                message.channel.send('Please Wait...');
                 (async () => {
                     const imageQueue = args.join(' ');
                     const imgRes = await google.scrape(imageQueue, 200);
