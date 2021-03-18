@@ -16,7 +16,8 @@ module.exports = {
                     {
                         name: "Senin",
                         value: `11.00 - 13.00 --> Rekayasa Perangkat Lunak \n
-                        15.30 - 17.00 --> Organisasi Komputer`
+                              13.00 - 15.00 --> Ilmu Sosial Budaya Dasar \n
+                              15.30 - 17.00 --> Organisasi Komputer` 
                     },
                     {
                         name: "Selasa",
