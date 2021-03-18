@@ -15,7 +15,8 @@ module.exports = {
                 .addFields(
                     {
                         name: "Senin",
-                        value: '11.00 - 13.00 --> Rekayasa Perangkat Lunak \n'
+                        value: `11.00 - 13.00 --> Rekayasa Perangkat Lunak \n
+                        15.30 - 17.00 --> Organisasi Komputer`
                     },
                     {
                         name: "Selasa",
@@ -28,8 +29,7 @@ module.exports = {
                     },
                     {
                         name: 'Kamis',
-                        value: `07.30 - 10.00 --> Organisasi Komputer \n
-                        10.00 - 12.30 --> Pemrograman Deklaratif \n
+                        value: `10.00 - 12.30 --> Pemrograman Deklaratif \n
                         13.00 - 15.30 --> Komputer Grafika \n`
 
                     },
