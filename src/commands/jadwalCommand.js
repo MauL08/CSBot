@@ -16,8 +16,8 @@ module.exports = {
                     {
                         name: "Senin",
                         value: `11.00 - 13.00 --> Rekayasa Perangkat Lunak \n
-                              13.00 - 15.00 --> Ilmu Sosial Budaya Dasar \n
-                              15.30 - 17.00 --> Organisasi Komputer` 
+                                13.00 - 15.00 --> Ilmu Sosial Budaya Dasar \n
+                                15.30 - 17.00 --> Organisasi Komputer`
                     },
                     {
                         name: "Selasa",
@@ -26,12 +26,12 @@ module.exports = {
                     {
                         name: 'Rabu',
                         value: `07.30 - 10.00 --> Sistem Operasi \n
-                        10.00 - 12.30 --> Desain Analisis Algoritma \n` 
+                                10.00 - 12.30 --> Desain Analisis Algoritma \n` 
                     },
                     {
                         name: 'Kamis',
                         value: `10.00 - 12.30 --> Pemrograman Deklaratif \n
-                        13.00 - 15.30 --> Komputer Grafika \n`
+                                13.00 - 15.30 --> Komputer Grafika \n`
 
                     },
                     {

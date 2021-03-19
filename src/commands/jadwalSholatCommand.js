@@ -1,14 +1,15 @@
 const { MessageEmbed } = require("discord.js");
+const fetch = require('node-fetch')
 
 const Days = new Date();
-const day = Days.getDay();
-const month = Days.getMonth();
-const year = Days.getYear();
+const day = Days.getDate();
+const month = Days.getMonth()+1 < 10 ? `0${Days.getMonth()+1}` : Days.getMonth()+1 ;
+const year = Days.getFullYear();
 
 const PREFIX = "$";
 
 module.exports = {
-    jadwalCommand: function (message) {
+    jadwalSholatCommand: function (message) {
         if (message.author.bot) return;
         if (message.content.startsWith(PREFIX)) {
             const command = message.content.substring(PREFIX.length);
