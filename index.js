@@ -1,34 +1,38 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const { Client } = require('discord.js');
+const { Client } = require("discord.js");
 const bot = new Client();
-const { listCommand } = require('./src/commands/listCommand')
-const { audioCommand } = require('./src/commands/audioCommand')
-const { covidCommand } = require('./src/commands/covidCommand')
-const { jadwalCommand } = require('./src/commands/jadwalCommand')
-const { pingCommand } = require('./src/commands/pingCommand')
-const { searchCommand } = require('./src/commands/searchCommand')
+const { listCommand } = require("./src/commands/listCommand");
+const { audioCommand } = require("./src/commands/audioCommand");
+const { covidCommand } = require("./src/commands/covidCommand");
+const { jadwalCommand } = require("./src/commands/jadwalCommand");
+const { pingCommand } = require("./src/commands/pingCommand");
+const { searchCommand } = require("./src/commands/searchCommand");
+const { jadwalSholatCommand } = require("./src/commands/jadwalSholatCommand");
 
-bot.on('ready', () => {
-    console.log(`${bot.user.username} is Online`)
-})
+bot.on("ready", () => {
+    console.log(`${bot.user.username} is Online`);
+});
 
 // List Command
-bot.on('message', listCommand)
+bot.on("message", listCommand);
 
 // Jadwal Command
-bot.on('message', jadwalCommand)  
+bot.on("message", jadwalCommand);
 
 // Ping Command
-bot.on('message', pingCommand)
+bot.on("message", pingCommand);
 
 // Image, Video, News Search Engine Command
-bot.on('message', searchCommand)
+bot.on("message", searchCommand);
 
 // Audio Command
-bot.on('message', audioCommand)
+bot.on("message", audioCommand);
 
 // Covid Command
-bot.on('message', covidCommand)
+bot.on("message", covidCommand);
+
+// Jadwal Sholat Command
+bot.on("message", jadwalSholatCommand);
 
 bot.login(process.env.TOKEN);

@@ -25,7 +25,10 @@
 * Changing Name to 'CSBot'.
 * Removing News & Video Search Function (Unfixed Bugs).
 
-## 5) **Version 1.4 (Latest)**
-* Cleaning some bad codes.
+## 5) **Version 1.4**
+* Cleaning some bad codes.  
+
+## 5) **Version 1.5 (Latest)**
+* Adding Pray Times in Jakarta.
 
 ### More Features Coming Soon :)
