@@ -20,15 +20,15 @@ module.exports = {
                         .addFields(
                             {
                                 name: 'Confirmed',
-                                value: res.confirmed.value
+                                value: `${res.confirmed.value} + ' People`
                             },
                             {
                                 name: 'Deaths',
-                                value: res.deaths.value
+                                value: `${res.deaths.value} + People`
                             },
                             {
                                 name: 'Recovered',
-                                value: res.recovered.value
+                                value: `${res.recovered.value} + People`
                             },
                         )
                         .setFooter('Last Update : ' + res.lastUpdate.substr(0,10) + ' <-> ' + res.lastUpdate.substr(11,5) + ' WIB')
