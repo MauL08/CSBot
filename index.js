@@ -8,7 +8,6 @@ const { covidCommand } = require("./src/commands/covidCommand");
 const { jadwalCommand } = require("./src/commands/jadwalCommand");
 const { pingCommand } = require("./src/commands/pingCommand");
 const { searchCommand } = require("./src/commands/searchCommand");
-const { jadwalSholatCommand } = require("./src/commands/jadwalSholatCommand");
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} is Online`);
@@ -23,7 +22,7 @@ bot.on("message", jadwalCommand);
 // Ping Command
 bot.on("message", pingCommand);
 
-// Image, Video, News Search Engine Command
+// Search Command
 bot.on("message", searchCommand);
 
 // Audio Command
@@ -31,8 +30,5 @@ bot.on("message", audioCommand);
 
 // Covid Command
 bot.on("message", covidCommand);
-
-// Jadwal Sholat Command
-bot.on("message", jadwalSholatCommand);
 
 bot.login(process.env.TOKEN);

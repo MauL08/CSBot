@@ -5,11 +5,8 @@ const CMD = [
     'listcmd',
     'jadwal',
     'ping',
-    'img',
-    'google',
-    'wiki',
-    'play',
-    'stop',
+    'search',
+    'audio',
     'covid'
 ]
 
@@ -21,46 +18,47 @@ module.exports = {
                 const embedList = new MessageEmbed()
                     .setTitle('List Commands')
                     .setColor('#0074FF')
-                    .setDescription(`Don't forget to use $\n
-                    ==========================`)
+                    .setDescription(`- Don't forget to use $\n
+                                    - Fill <...> with command, without <> \n
+                                    Example :
+                                    - $search image cat
+                                    - $audio play www.youtube.com/? \n
+                                    ==========================`)
                     .addFields(
                         {
                             name: CMD[0],
-                            value: 'List of All Commands'
+                            value: `List of All Commands \n
+                                    ==========================`
                         },
                         {
-                            name: CMD[1],
-                            value: 'List Jadwal Kuliah'
+                            name: `${CMD[1]} + <...>`,
+                            value: `List Jadwal :
+                                    - Kuliah ( <kuliah> )
+                                    - Sholat ( <sholat> ) \n
+                                    ==========================`
                         },
                         {
                             name: CMD[2],
                             value: `Ping Internet Connection \n
-                            ==========================`
+                                    ==========================`
                         },
                         {
-                            name: CMD[3],
-                            value: `Image Search Engine \n`
+                            name: `${CMD[3]} + <...> + <subject>`,
+                            value: `Search :
+                                    - Image ( <image> )
+                                    - Google ( <google> )
+                                    - Wikipedia ( <wiki> ) \n
+                                    ==========================`
                         },
                         {
-                            name: CMD[4],
-                            value: `Google Search Engine \n`
-                        },
+                            name: `${CMD[4]} + <...>`,
+                            value: `Audio :
+                                    - Play Audio ( <play> + <URL> )
+                                    - Stop Audio ( <stop> ) \n
+                                    ==========================`
+                        },      
                         {
                             name: CMD[5],
-                            value: `Wikipedia Search Engine \n
-                            ==========================`
-                        },
-                        {
-                            name: CMD[6],
-                            value: 'Play Audio from URL'
-                        },
-                        {
-                            name: CMD[7],
-                            value: `Stop Audio from URL \n
-                            ==========================`
-                        },
-                        {
-                            name: CMD[8],
                             value: 'Covid Tracker (Indonesia)'
                         },
                     )
