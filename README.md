@@ -28,7 +28,7 @@
 ## 5) **Version 1.4**
 * Cleaning some bad codes.  
 
-## 5) **Version 1.5 (Latest)**
+## 6) **Version 1.5**
 * Adding Pray Times in Jakarta.
 
 ### More Features Coming Soon :)
