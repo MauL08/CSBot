@@ -23,24 +23,24 @@ module.exports = {
                                     Example :
                                     - $search image cat
                                     - $audio play www.youtube.com/? \n
-                                    ==========================`)
+                                    ===================`)
                     .addFields(
                         {
                             name: CMD[0],
                             value: `List of All Commands \n
-                                    ==========================`
+                                    ===================`
                         },
                         {
                             name: `${CMD[1]} + <...>`,
                             value: `List Jadwal :
                                     - Kuliah ( <kuliah> )
                                     - Sholat ( <sholat> ) \n
-                                    ==========================`
+                                    ===================`
                         },
                         {
                             name: CMD[2],
                             value: `Ping Internet Connection \n
-                                    ==========================`
+                                    ===================`
                         },
                         {
                             name: `${CMD[3]} + <...> + <subject>`,
@@ -48,14 +48,14 @@ module.exports = {
                                     - Image ( <image> )
                                     - Google ( <google> )
                                     - Wikipedia ( <wiki> ) \n
-                                    ==========================`
+                                    ===================`
                         },
                         {
                             name: `${CMD[4]} + <...>`,
                             value: `Audio :
                                     - Play Audio ( <play> + <URL> )
                                     - Stop Audio ( <stop> ) \n
-                                    ==========================`
+                                    ===================`
                         },      
                         {
                             name: CMD[5],

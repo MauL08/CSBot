@@ -22,7 +22,7 @@ module.exports = {
                     const emb = new MessageEmbed()
                     .setTitle("Jadwal Kuliah (Semester 114)")
                     .setColor('#18FF00')
-                    .setDescription('================= || =================')
+                    .setDescription('========== || ==========')
                     .addFields(
                         {
                             name: "Senin",
@@ -50,7 +50,7 @@ module.exports = {
                             value: '09.00 - 10.30 --> Metode Penelitian'
                         },
                     )
-                    .setFooter('==================== || ====================')
+                    .setFooter('============= || =============')
                     message.channel.send(emb);
                 break;
                 case 'sholat':
