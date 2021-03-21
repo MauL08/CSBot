@@ -63,7 +63,7 @@ module.exports = {
                                 .setTitle("Jadwal Sholat Hari Ini")
                                 .setColor("#18FF00")
                                 .setDescription(
-                                    "================= || ================= \n "
+                                    "========== || ========== \n "
                                 )
                                 .addFields(
                                     {
@@ -88,7 +88,7 @@ module.exports = {
                                     }
                                 )
                                 .setFooter(
-                                    "==================== || ===================="
+                                    "============= || ============="
                                 );
                             message.channel.send(emb);
                         });
