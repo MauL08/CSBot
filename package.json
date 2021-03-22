@@ -33,7 +33,6 @@
     "node-superfetch": "^0.1.11",
     "nodemon": "^2.0.7",
     "opusscript": "0.0.8",
-    "puppeteer": "^8.0.0",
     "request": "^2.88.2",
     "slappey": "^3.0.0",
     "ytdl-core": "^4.5.0",
