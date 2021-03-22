@@ -108,8 +108,8 @@ module.exports = {
                         }
                     })();
                 break;
-            }
+                }
+            }        
         }
-        
-    }}
+    }
 }
