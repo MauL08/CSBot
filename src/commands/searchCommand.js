@@ -9,7 +9,8 @@ const PREFIX = '$';
 
 const google = new Scraper({
     puppeteer: {
-        headless: true
+        headless: true,
+        args: ["--no-sandbox"]
     }
 })
 
