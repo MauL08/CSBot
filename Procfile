@@ -1,1 +1,1 @@
-worker: node server
+worker: nodemon server
