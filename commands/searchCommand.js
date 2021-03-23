@@ -28,11 +28,12 @@ module.exports = {
         if (command === 'search') {
             switch(args[0]) {
                     case 'image':
-                        (async () => {
-                            args.splice(0,1);
-                            const imageQueue = args.join(' ');
-                            const imgRes = await google.scrape(imageQueue, 100);
-                            message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
+                        (  
+                            async () => {
+                                args.splice(0,1);
+                                const imageQueue = args.join(' ');
+                                const imgRes = await google.scrape(imageQueue, 100);
+                                message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
                         })();
                     break;
                     case 'google':
