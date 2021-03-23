@@ -2,12 +2,12 @@ require("dotenv").config();
 
 const { Client } = require("discord.js");
 const bot = new Client();
-const { listCommand } = require("./src/commands/listCommand");
-const { audioCommand } = require("./src/commands/audioCommand");
-const { covidCommand } = require("./src/commands/covidCommand");
-const { jadwalCommand } = require("./src/commands/jadwalCommand");
-const { pingCommand } = require("./src/commands/pingCommand");
-const { searchCommand } = require("./src/commands/searchCommand");
+const { listCommand } = require("./commands/listCommand");
+const { audioCommand } = require("./commands/audioCommand");
+const { covidCommand } = require("./commands/covidCommand");
+const { jadwalCommand } = require("./commands/jadwalCommand");
+const { pingCommand } = require("./commands/pingCommand");
+const { searchCommand } = require("./commands/searchCommand");
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} is Online`);
