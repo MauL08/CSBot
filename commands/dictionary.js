@@ -24,7 +24,8 @@ module.exports = {
                             .setDescription(res.data.description)
                             .setColor('RANDOM')
                         message.channel.send(emb);
-                    })
+                    }
+                )
             }
         }
     }
