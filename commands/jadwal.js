@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 const PREFIX = '.';
 
 module.exports = {
-    jadwalCommand: function (message) {
+    jadwal: function (message) {
         if(message.author.bot) return;
         if(message.content.startsWith(PREFIX)){
             const [command, ...args] = message.content

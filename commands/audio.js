@@ -4,7 +4,7 @@ const PREFIX = '.';
 var serversQueue = {};
 
 module.exports = {
-    audioCommand: function (message) {
+    audio: function (message) {
         if (message.author.bot) return;
         if (message.content.startsWith(PREFIX)) {
         const [command, ...args] = message.content

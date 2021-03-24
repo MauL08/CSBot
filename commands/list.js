@@ -12,7 +12,7 @@ const CMD = [
 ]
 
 module.exports = {
-    listCommand: function (message) {
+    list: function (message) {
         if(message.content.startsWith(PREFIX)) {
             const command = message.content.substring(PREFIX.length);
             if (command === CMD[0]) {

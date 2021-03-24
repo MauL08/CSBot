@@ -6,7 +6,7 @@ const PREFIX = '.';
 // https://covid19.mathdro.id/api/countries/indonesia
 
 module.exports = {
-    covidCommand: function (message) {
+    covid: function (message) {
         if (message.author.bot) return;
         if (message.content.startsWith(PREFIX)) {
         const command = message.content.substring(PREFIX.length);

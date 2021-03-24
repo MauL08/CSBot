@@ -6,7 +6,7 @@ const PREFIX = '.'
 const URL = `https://kalenderindonesia.com/api/${process.env.KI_API}`;
 
 module.exports = {
-    dictionaryCommand: function (message) {
+    dictionary: function (message) {
         if(message.author.bot) return;
         if(message.content.startWith(PREFIX)) {
             const [command, ...args] = message.content

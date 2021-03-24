@@ -15,7 +15,7 @@ const google = new Scraper({
 })
 
 module.exports = {
-    searchCommand: function (message) {
+    search: function (message) {
         if (message.author.bot) return;
         if (message.content.startsWith(PREFIX)) {
         const [command, ...args] = message.content

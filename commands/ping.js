@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 const PREFIX = '.';
 
 module.exports = {
-    pingCommand: function (message) {
+    ping: function (message) {
         if(message.author.bot) return;
         if(message.content.startsWith(PREFIX)) {
             const command = message.content.substring(PREFIX.length);
