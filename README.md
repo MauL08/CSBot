@@ -31,4 +31,8 @@
 ## 6) **Version 1.5**
 * Adding Pray Times in Jakarta.
 
+## 6) **Version 1.6 (Latest)**
+* Removing Pray Times in Jakarta.
+* Adding Dictionary API.
+
 ### More Features Coming Soon :)

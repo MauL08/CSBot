@@ -1,6 +1,6 @@
 const ytdl = require('ytdl-core');
 
-const PREFIX = '$';
+const PREFIX = '.';
 var serversQueue = {};
 
 module.exports = {

@@ -2,33 +2,40 @@ require("dotenv").config();
 
 const { Client } = require("discord.js");
 const bot = new Client();
-const { listCommand } = require("./commands/listCommand");
-const { audioCommand } = require("./commands/audioCommand");
-const { covidCommand } = require("./commands/covidCommand");
-const { jadwalCommand } = require("./commands/jadwalCommand");
-const { pingCommand } = require("./commands/pingCommand");
-const { searchCommand } = require("./commands/searchCommand");
 
+const { list } = require("./commands/list");
+const { audio } = require("./commands/audio");
+const { covid } = require("./commands/covid");
+const { jadwal } = require("./commands/jadwal");
+const { ping } = require("./commands/ping");
+const { search } = require("./commands/search");
+const { dictionary } = require("./commands/dictionary");
+
+// Bot Ready
 bot.on("ready", () => {
     console.log(`${bot.user.username} is Online`);
 });
 
 // List Command
-bot.on("message", listCommand);
+bot.on("message", list);
 
 // Jadwal Command
-bot.on("message", jadwalCommand);
+bot.on("message", jadwal);
 
 // Ping Command
-bot.on("message", pingCommand);
+bot.on("message", ping);
 
 // Search Command
-bot.on("message", searchCommand);
+bot.on("message", search);
 
 // Audio Command
-bot.on("message", audioCommand);
+bot.on("message", audio);
 
 // Covid Command
-bot.on("message", covidCommand);
+bot.on("message", covid);
 
+// Dictionary Command
+bot.on("message", dictionary);
+
+// Bot Login
 bot.login(process.env.TOKEN);

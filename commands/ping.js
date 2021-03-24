@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-const PREFIX = '$';
+const PREFIX = '.';
 
 module.exports = {
     pingCommand: function (message) {

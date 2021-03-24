@@ -1,13 +1,14 @@
 const { MessageEmbed } = require('discord.js');
 
-const PREFIX = '$';
+const PREFIX = '.';
 const CMD = [
     'listcmd',
     'jadwal',
     'ping',
     'search',
     'audio',
-    'covid'
+    'covid',
+    'kamus'
 ]
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
                 const embedList = new MessageEmbed()
                     .setTitle('List Commands')
                     .setColor('#0074FF')
-                    .setDescription(`- Don't forget to use $\n
+                    .setDescription(`- Don't forget to use .\n
                                     - Fill <...> with command, without <> \n
                                     Example :
                                     - $search image cat
@@ -34,7 +35,6 @@ module.exports = {
                             name: `${CMD[1]} + <...>`,
                             value: `List Jadwal :
                                     - Kuliah ( <kuliah> )
-                                    - Sholat ( <sholat> ) \n
                                     ===================`
                         },
                         {
@@ -59,7 +59,12 @@ module.exports = {
                         },      
                         {
                             name: CMD[5],
-                            value: 'Covid Tracker (Indonesia)'
+                            value: `Covid Tracker (Indonesia) \n
+                                    ===================`
+                        },
+                        {
+                            name: `${CMD[6]} + <subject>`,
+                            value: 'Kamus Besar Bahasa Indonesia (KBBI)'
                         },
                     )
                 message.channel.send(embedList);

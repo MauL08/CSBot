@@ -5,7 +5,7 @@ const Scraper = require('images-scraper');
 const fetch = require('node-fetch')
 const request = require('node-superfetch')
 
-const PREFIX = '$';
+const PREFIX = '.';
 
 const google = new Scraper({
     puppeteer: {
@@ -32,7 +32,7 @@ module.exports = {
                             async () => {
                                 args.splice(0,1);
                                 const imageQueue = args.join(' ');
-                                const imgRes = await google.scrape(imageQueue, 100);
+                                const imgRes = await google.scrape(imageQueue, 50);
                                 message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
                         })();
                     break;

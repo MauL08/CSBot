@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 const fetch = require('node-fetch')
-const PREFIX = '$';
+const PREFIX = '.';
 
 // https://covid19.mathdro.id/api/countries/indonesia
 
