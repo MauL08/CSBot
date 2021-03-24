@@ -8,7 +8,7 @@ const URL = `https://kalenderindonesia.com/api/${process.env.KI_API}`;
 module.exports = {
     dictionary: function (message) {
         if(message.author.bot) return;
-        if(message.content.startWith(PREFIX)) {
+        if(message.content.startsWith(PREFIX)) {
             const [command, ...args] = message.content
                 .trim()
                 .substring(PREFIX.length)
