@@ -1,7 +1,8 @@
 require('dotenv').config();
 
-const { MessageEmbed } = require('discord.js')
-const PREFIX = '.'
+const { MessageEmbed } = require('discord.js');
+const fetch = require('node-fetch');
+const PREFIX = '.';
 
 const URL = `https://kalenderindonesia.com/api/${process.env.KI_API}`;
 
