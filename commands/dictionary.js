@@ -6,6 +6,14 @@ const PREFIX = '.';
 
 const URL = `https://kalenderindonesia.com/api/${process.env.KI_API}`;
 
+function removeTags(str) {
+    if ((str===null) || (str==='')) return false;
+    
+    str = str.toString();
+    
+    return str.replace( /(<([^>]+)>)/ig, '');
+}
+
 module.exports = {
     dictionary: function (message) {
         if(message.author.bot) return;
@@ -21,7 +29,7 @@ module.exports = {
                     .then(res => {
                         const emb = new MessageEmbed()
                             .setTitle(res.data.word)
-                            .setDescription(res.data.description)
+                            .setDescription(removeTags(res.data.description))
                             .setColor('RANDOM')
                         message.channel.send(emb);
                     }
