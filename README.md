@@ -31,8 +31,16 @@
 ## 6) **Version 1.5**
 * Adding Pray Times in Jakarta.
 
-## 6) **Version 1.6 (Latest)**
+## 7) **Version 1.6**
 * Removing Pray Times in Jakarta.
 * Adding Dictionary API.
+* Change Prefix to **.**
+
+## 8) **Version 1.7 (Latest)**
+* Re-adding Pray Times in Jakarta.
+* Al-Qur'an & Hadist Features.
+* Calendar Feature.
 
 ### More Features Coming Soon :)
+
+This Bot is already hosted on **Heroku**.
