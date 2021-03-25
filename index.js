@@ -1,20 +1,23 @@
 require("dotenv").config();
 
-const { Client } = require("discord.js");
+const { Client, Collection } = require("discord.js");
 const bot = new Client();
 
 const PREFIX = '.'
 
-const { list } = require("./commands/list");
-const { audio } = require("./commands/audio");
-const { covid } = require("./commands/covid");
-const { jadwal } = require("./commands/jadwal");
-const { ping } = require("./commands/ping");
-const { search } = require("./commands/search");
-const { dictionary } = require("./commands/dictionary");
-const { kalender } = require('./commands/kalender');
-const { quran } = require('./commands/quran');
-const { hadist } = require('./commands/hadist');
+const fs = require('fs');
+
+bot.commands = new Collection();
+
+// Command Files
+const commandFiles = fs.readdirSync('./commands/')
+                       .filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    bot.commands.set(command.name, command);
+}
 
 // Bot Ready
 bot.on("ready", () => {
@@ -23,24 +26,51 @@ bot.on("ready", () => {
 
 // Bot Command
 bot.on('message', (message) => {
-    if(message.author.bot) return;
-    if(message.content.startsWith(PREFIX)) {
-        const command = message.content.substring(PREFIX.length);
+    if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-        if (command === 'list') return list;
-        if (command === 'audio') return audio;
-        if (command === 'covid') return covid;
-        if (command === 'jadwal') return jadwal;
-        if (command === 'ping') return ping;
-        if (command === 'search') return search;
-        if (command === 'kamus') return dictionary;
-        if (command === 'kalender') return kalender;
-        if (command === 'quran') return quran;
-        if (command === 'hadist') return hadist;
+	const args = message.content.slice(PREFIX.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+
+    if (command === 'audio') {
+        bot.commands.get('audio').execute(message, args)
+    }
+
+    if (command === 'covid') {
+        bot.commands.get('covid').execute(message, args)
+    }
+
+    if (command === 'kamus') {
+        bot.commands.get('kamus').execute(message, args)
+    }
+
+    if (command === 'jadwal') {
+        bot.commands.get('jadwal').execute(message, args)
+    }
+
+    if (command === 'kalender') {
+        bot.commands.get('kalender').execute(message, args)
+    }
+
+    if (command === 'list') {
+        bot.commands.get('list').execute(message, args)
+    }
+
+    if (command === 'ping') {
+        bot.commands.get('ping').execute(message, args)
+    }
+
+    if (command === 'hadist') {
+        bot.commands.get('hadist').execute(message, args)
+    }
+
+    if (command === 'quran') {
+        bot.commands.get('quran').execute(message, args)
+    }
+
+    if (command === 'search') {
+        bot.commands.get('search').execute(message, args)
     }
 })
-
-bot.on('message', list);
 
 // Bot Login
 bot.login(process.env.TOKEN);
