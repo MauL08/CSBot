@@ -11,7 +11,7 @@ module.exports = {
             .then(res => res.json())
             .then(res => {
                 const emb = new MessageEmbed()
-                    .setTitle(`${res.data.surah.name.transliteration.id} (${res.data.surah.name.short}) -> ${args[0]} : ${args[1]}`)
+                    .setTitle(`${res.data.surah.name.transliteration.id} (${res.data.surah.name.short}) -> ${args[1]} : ${args[0]}`)
                     .setColor('RANDOM')
                     .setDescription(`${res.data.surah.name.translation.en} (${res.data.surah.name.translation.id})`)
                     .addFields(
