@@ -8,7 +8,10 @@ const CMD = [
     'search',
     'audio',
     'covid',
-    'kamus'
+    'kamus',
+    'quran',
+    'hadist',
+    'kalendar'
 ]
 
 module.exports = {
@@ -64,7 +67,22 @@ module.exports = {
                         },
                         {
                             name: `${CMD[6]} + <subject>`,
-                            value: 'Kamus Besar Bahasa Indonesia (KBBI)'
+                            value: `Kamus Besar Bahasa Indonesia (KBBI) \n
+                                    ===================`
+                        },
+                        {
+                            name: `${CMD[7]} + <surat> <ayat>`,
+                            value: `Al-Qur'an dan Terjemahan \n`
+                        },
+                        {
+                            name: `${CMD[8]} + <nama> <nomorHadist>`,
+                            value: `Hadist \n
+                                    ===================`
+                        },
+                        {
+                            name: `${CMD[9]}`,
+                            value: `Kalendar ( Masehi & Hijriyah ) \n
+                                    ===================`
                         },
                     )
                 message.channel.send(embedList);

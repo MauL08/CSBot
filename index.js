@@ -23,21 +23,24 @@ bot.on("ready", () => {
 
 // Bot Command
 bot.on('message', (message) => {
-    if(!message.content.startsWith(PREFIX) || message.author.bot) return;
+    if(message.author.bot) return;
+    if(message.content.startsWith(PREFIX)) {
+        const command = message.content.substring(PREFIX.length);
 
-    const command = message.content.substring(PREFIX.length);
-
-    if (command === 'list') return list;
-    if (command === 'audio') return audio;
-    if (command === 'covid') return covid;
-    if (command === 'jadwal') return jadwal;
-    if (command === 'ping') return ping;
-    if (command === 'search') return search;
-    if (command === 'dictionary') return dictionary;
-    if (command === 'kalender') return kalender;
-    if (command === 'quran') return quran;
-    if (command === 'hadist') return hadist;
+        if (command === 'list') return list;
+        if (command === 'audio') return audio;
+        if (command === 'covid') return covid;
+        if (command === 'jadwal') return jadwal;
+        if (command === 'ping') return ping;
+        if (command === 'search') return search;
+        if (command === 'kamus') return dictionary;
+        if (command === 'kalender') return kalender;
+        if (command === 'quran') return quran;
+        if (command === 'hadist') return hadist;
+    }
 })
+
+bot.on('message', list);
 
 // Bot Login
 bot.login(process.env.TOKEN);
