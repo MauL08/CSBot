@@ -37,6 +37,7 @@ module.exports = {
                     name: `${CMD[1]} + <...>`,
                     value: `List Jadwal :
                             - Kuliah ( <kuliah> )
+                            - Sholat ( <sholat> )
                             ===================`
                 },
                 {
