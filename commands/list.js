@@ -11,7 +11,7 @@ const CMD = [
     'kamus',
     'quran',
     'hadist',
-    'kalendar'
+    'kalender'
 ]
 
 module.exports = {
@@ -81,7 +81,7 @@ module.exports = {
                 },
                 {
                     name: `${CMD[9]}`,
-                    value: `Kalendar ( Masehi & Hijriyah ) \n`
+                    value: `Kalender ( Masehi & Hijriyah ) \n`
                 },
             )
         message.channel.send(embedList);
