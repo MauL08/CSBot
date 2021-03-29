@@ -51,6 +51,10 @@ bot.on('message', (message) => {
         bot.commands.get('kalender').execute(message, args)
     }
 
+    if (command === 'kelas'){
+        bot.commands.get().execute()
+    }
+
     if (command === 'list') {
         bot.commands.get('list').execute(message, args)
     }
