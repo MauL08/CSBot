@@ -1,34 +1,76 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const { Client } = require('discord.js');
+const { Client, Collection } = require("discord.js");
 const bot = new Client();
-const { listCommand } = require('./src/commands/listCommand')
-const { audioCommand } = require('./src/commands/audioCommand')
-const { covidCommand } = require('./src/commands/covidCommand')
-const { jadwalCommand } = require('./src/commands/jadwalCommand')
-const { pingCommand } = require('./src/commands/pingCommand')
-const { searchCommand } = require('./src/commands/searchCommand')
 
-bot.on('ready', () => {
-    console.log(`${bot.user.username} is Online`)
+const PREFIX = '.'
+
+const fs = require('fs');
+
+bot.commands = new Collection();
+
+// Command Files
+const commandFiles = fs.readdirSync('./commands/')
+                       .filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    bot.commands.set(command.name, command);
+}
+
+// Bot Ready
+bot.on("ready", () => {
+    console.log(`${bot.user.username} is Online`);
+});
+
+// Bot Command
+bot.on('message', (message) => {
+    if (!message.content.startsWith(PREFIX) || message.author.bot) return;
+
+	const args = message.content.slice(PREFIX.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+
+    if (command === 'audio') {
+        bot.commands.get('audio').execute(message, args)
+    }
+
+    if (command === 'covid') {
+        bot.commands.get('covid').execute(message, args)
+    }
+
+    if (command === 'kamus') {
+        bot.commands.get('kamus').execute(message, args)
+    }
+
+    if (command === 'jadwal') {
+        bot.commands.get('jadwal').execute(message, args)
+    }
+
+    if (command === 'kalender') {
+        bot.commands.get('kalender').execute(message, args)
+    }
+
+    if (command === 'list') {
+        bot.commands.get('list').execute(message, args)
+    }
+
+    if (command === 'ping') {
+        bot.commands.get('ping').execute(message, args)
+    }
+
+    if (command === 'hadist') {
+        bot.commands.get('hadist').execute(message, args)
+    }
+
+    if (command === 'quran') {
+        bot.commands.get('quran').execute(message, args)
+    }
+
+    if (command === 'search') {
+        bot.commands.get('search').execute(message, args)
+    }
 })
 
-// List Command
-bot.on('message', listCommand)
-
-// Jadwal Command
-bot.on('message', jadwalCommand)  
-
-// Ping Command
-bot.on('message', pingCommand)
-
-// Image, Video, News Search Engine Command
-bot.on('message', searchCommand)
-
-// Audio Command
-bot.on('message', audioCommand)
-
-// Covid Command
-bot.on('message', covidCommand)
-
+// Bot Login
 bot.login(process.env.TOKEN);

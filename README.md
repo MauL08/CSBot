@@ -25,7 +25,22 @@
 * Changing Name to 'CSBot'.
 * Removing News & Video Search Function (Unfixed Bugs).
 
-## 5) **Version 1.4 (Latest)**
-* Cleaning some bad codes.
+## 5) **Version 1.4**
+* Cleaning some bad codes.  
+
+## 6) **Version 1.5**
+* Adding Pray Times in Jakarta.
+
+## 7) **Version 1.6**
+* Removing Pray Times in Jakarta.
+* Adding Dictionary API.
+* Change Prefix to **.**
+
+## 8) **Version 1.7 (Latest)**
+* Re-adding Pray Times in Jakarta.
+* Al-Qur'an & Hadist Features.
+* Calendar Feature.
 
 ### More Features Coming Soon :)
+
+This Bot is already hosted on **Heroku**.

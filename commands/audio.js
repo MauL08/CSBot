@@ -1,19 +1,13 @@
 const ytdl = require('ytdl-core');
 
-const PREFIX = '$';
 var serversQueue = {};
 
 module.exports = {
-    audioCommand: function (message) {
-        if (message.author.bot) return;
-        if (message.content.startsWith(PREFIX)) {
-        const [command, ...args] = message.content
-            .trim()
-            .substring(PREFIX.length)
-            .split(/\s+/)
-        switch(command) {
+    name: 'audio',
+    description: 'Audio Player',
+    execute(message, args) {
+        switch(args[0]) {
             case 'play': // Play Command
-
                 const play = (message, connection) => {
                     var serverQueue = serversQueue[message.guild.id];
 
@@ -32,7 +26,7 @@ module.exports = {
                     })
                 }
 
-                if (args.length === 0) {
+                if (args[1] === '') {
                     message.channel.send('Please provide valid URL')
                     return;
                 }
@@ -47,7 +41,7 @@ module.exports = {
                 }
                 var serverQueue = serversQueue[message.guild.id];
                 
-                serverQueue.queue.push(args[0]);
+                serverQueue.queue.push(args[1]);
 
                 if (!message.member.voice.connection) {
                         message.member.voice.channel
@@ -71,5 +65,5 @@ module.exports = {
                 }
             break;
         }
-    }}
+    }
 }

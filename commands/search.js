@@ -5,31 +5,28 @@ const Scraper = require('images-scraper');
 const fetch = require('node-fetch')
 const request = require('node-superfetch')
 
-const PREFIX = '$';
-
 const google = new Scraper({
     puppeteer: {
-        headless: true
+        headless: true,
+        args: ["--no-sandbox"]
     }
 })
 
 module.exports = {
-    searchCommand: function (message) {
-        if (message.author.bot) return;
-        if (message.content.startsWith(PREFIX)) {
-        const [command, ...args] = message.content
-            .trim()
-            .substring(PREFIX.length)
-            .split(/\s+/)
-        switch(command) {
-            case 'img':
+    name: 'search',
+    description: 'Search Engine',
+    execute(message, args) {
+        switch(args[0]) {
+            case 'image':
                 (async () => {
-                    const imageQueue = args.join(' ');
-                    const imgRes = await google.scrape(imageQueue, 200);
-                    message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
+                        args.splice(0,1);
+                        const imageQueue = args.join(' ');
+                        const imgRes = await google.scrape(imageQueue, 50);
+                        message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
                 })();
             break;
             case 'google':
+                args.splice(0,1);
                 (async () => {
                     const googleKey = process.env.GOOGLE_API;
                     const csx = 'b4340115fcd24ce3c'
@@ -60,6 +57,7 @@ module.exports = {
                 })();
             break;
             case 'wiki':
+                args.splice(0,1);
                 (async () => {
                     const subWiki = args.join(' ');
                     if (!subWiki) message.channel.send('Please type the correct Subject.')
@@ -102,5 +100,5 @@ module.exports = {
                 })();
             break;
         }
-    }}
+    }
 }
