@@ -4,7 +4,7 @@ const fetch = require('node-fetch')
 module.exports ={
   nama : 'nomor',
   description : 'untuk mengetahui kelas dan nomornya',
-  execute(message,args){
+  execute(message) {
     const emb = new MessageEmbed()
     .setTitle("Nomor mk untuk absen") 
     .setColor('#61afef')
