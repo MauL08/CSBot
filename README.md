@@ -36,10 +36,13 @@
 * Adding Dictionary API.
 * Change Prefix to **.**
 
-## 8) **Version 1.7 (Latest)**
+## 8) **Version 1.7**
 * Re-adding Pray Times in Jakarta.
 * Al-Qur'an & Hadist Features.
 * Calendar Feature.
+
+## 9) **Version 1.8 (Latest)**
+* Mata Kuliah + Kode Mata Kuliah
 
 ### More Features Coming Soon :)
 
