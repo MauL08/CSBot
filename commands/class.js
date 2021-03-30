@@ -43,6 +43,7 @@ module.exports ={
           value : "1313600010",
         },
       )
-
+    .setFooter("========== || ==========");
+    message.channel.send(emb);
   }
 } 
