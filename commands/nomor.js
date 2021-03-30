@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch')
 
 module.exports ={
-  nama : 'kelas',
+  nama : 'nomor',
   description : 'untuk mengetahui kelas dan nomornya',
   execute(message,args){
     const emb = new MessageEmbed()
@@ -34,13 +34,13 @@ module.exports ={
           value : "1313600010",
         },
         { name : "Ilmu Sosial dan Budaya Dasar",
-          value : "1313600010",
+          value : "1000000284",
         },
         { name : "Metode Penelitian",
           value : "1313600010",
         },
         { name : "Grafika Komputer",
-          value : "1313600010",
+          value : "1313600018",
         },
       )
     .setFooter("========== || ==========");
