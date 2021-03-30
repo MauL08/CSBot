@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch')
 
 module.exports ={
-  nama : 'nomor',
+  name : 'matkul',
   description : 'untuk mengetahui kelas dan nomornya',
   execute(message,args){
     const emb = new MessageEmbed()

@@ -51,8 +51,8 @@ bot.on('message', (message) => {
         bot.commands.get('kalender').execute(message, args)
     }
 
-    if (command === 'nomor'){
-        bot.commands.get('nomor').execute(message, args)
+    if (command === 'matkul'){
+        bot.commands.get('matkul').execute(message, args)
     }
 
     if (command === 'list') {
