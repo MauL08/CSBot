@@ -52,7 +52,7 @@ bot.on('message', (message) => {
     }
 
     if (command === 'kelas'){
-        bot.commands.get().execute()
+        bot.commands.get('class').execute(message, args)
     }
 
     if (command === 'list') {
