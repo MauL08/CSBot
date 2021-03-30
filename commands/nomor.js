@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports = {
-  name : 'nomor',
+module.exports ={
+  name : 'matkul',
   description : 'untuk mengetahui kelas dan nomornya',
   execute(message) {
     const emb = new MessageEmbed()
