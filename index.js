@@ -28,8 +28,10 @@ bot.on("ready", () => {
 bot.on('message', (message) => {
     if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-	const args = message.content.slice(PREFIX.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
+    const [command, ...args] = message.content
+        .trim()
+        .substring(PREFIX.length)
+        .split(/\s+/);
 
     if (command === 'audio') {
         bot.commands.get('audio').execute(message, args)
