@@ -12,7 +12,7 @@ const CMD = [
     'quran',
     'hadist',
     'kalender',
-    'nomor'
+    'matkul'
 ]
 
 module.exports = {

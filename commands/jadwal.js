@@ -2,8 +2,8 @@ const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch')
 
 const Days = new Date();
-const day = Days.getDate();
-const month = Days.getMonth() + 1 < 10 ? `0${Days.getMonth()+1}` : Days.getMonth() + 1 ;
+const day = Days.getDate() < 10 ? `0${Days.getDate()}` : Days.getDate();
+const month = Days.getMonth() + 1 < 10 ? `0${Days.getMonth() + 1}` : Days.getMonth() + 1 ;
 const year = Days.getFullYear();
 
 module.exports = {
@@ -53,12 +53,16 @@ module.exports = {
                     .then(res => res.json())
                     .then(res => {
                         const emb = new MessageEmbed()
-                            .setTitle("Jadwal Sholat Hari Ini")
+                            .setTitle("Jadwal Sholat Hari Ini" + ` (${res.jadwal.data.tanggal})`)
                             .setColor("#18FF00")
                             .setDescription(
                                 "========== || ========== \n "
                             )
                             .addFields(
+                                {
+                                    name: "Imsak",
+                                    value: `${res.jadwal.data.imsak} WIB`,
+                                },
                                 {
                                     name: "Shubuh",
                                     value: `${res.jadwal.data.subuh} WIB`,
