@@ -6,11 +6,12 @@ const fetch = require('node-fetch')
 const request = require('node-superfetch')
 
 const google = new Scraper({
-    puppeteer: {
-        headless: true,
-        args: ["--no-sandbox"]
+        puppeteer: {
+            headless: true,
+            args: ["--no-sandbox"]
+        }
     }
-})
+)
 
 module.exports = {
     name: 'search',
