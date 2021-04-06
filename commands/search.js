@@ -5,6 +5,8 @@ const Scraper = require('images-scraper');
 const fetch = require('node-fetch')
 const request = require('node-superfetch')
 
+var Err = 0;
+
 const google = new Scraper({
         puppeteer: {
             headless: true,
@@ -19,12 +21,19 @@ module.exports = {
     execute(message, args) {
         switch(args[0]) {
             case 'image':
-                (async () => {
+                while(Err <= 3) {
+                    (async () => {
                         args.splice(0,1);
                         const imageQueue = args.join(' ');
                         const imgRes = await google.scrape(imageQueue, 50);
                         message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
-                })();
+                        Err++;
+                    })();
+                    if (Err === 3) {
+                        message.channel.send('Overload!')
+                        break;
+                    }
+                }
             break;
             case 'google':
                 args.splice(0,1);
