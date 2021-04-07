@@ -28,12 +28,12 @@ module.exports = {
             case 'wiki':
                 args.splice(0,1);
                 (async () => {
+                    let response;
+
                     const subWiki = args.join(' ');
                     if (!subWiki) message.channel.send('Please type the correct Subject.')
                     
                     const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(subWiki)}`
-
-                    let response;
 
                     try {
                         response = await fetch(url).then(res => res.json())
