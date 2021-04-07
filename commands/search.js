@@ -3,7 +3,6 @@ require('dotenv').config();
 const { MessageEmbed } = require('discord.js')
 const Scraper = require('images-scraper');
 const fetch = require('node-fetch')
-const request = require('node-superfetch')
 
 const google = new Scraper({
         puppeteer: {
@@ -24,37 +23,6 @@ module.exports = {
                     const imageQueue = args.join(' ');
                     const imgRes = await google.scrape(imageQueue, 50);
                     message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
-                })();
-            break;
-            case 'google':
-                args.splice(0,1);
-                (async () => {
-                    const googleKey = process.env.GOOGLE_API;
-                    const csx = 'b4340115fcd24ce3c'
-                    let searchQueue = args.join(' ');
-
-                    if (!searchQueue) return message.channel.send('Please Input search Subject.');
-
-                    href = await search(searchQueue);
-                    if (!href) return message.channel.send('Nothing Found!')
-
-                    const emb = new MessageEmbed()
-                        .setTitle(href.title)
-                        .setDescription(href.snippet)
-                        .setImage(href.pagemap ? href.pagemap.cse_thumbnail[0].src : null)
-                        .setURL(href.link)
-                        .setColor('RANDOM')
-                        .setFooter('Powered by Google')
-                    message.channel.send(emb)
-
-                    async function search(query) {
-                        const { body } = await request.get('https://www.googleapis.com/customsearch/v1').query({
-                            key: googleKey, cx: csx, safe: 'off', q: query 
-                        });
-
-                        if (!body.items) return null;
-                        return body.items[0];
-                    }
                 })();
             break;
             case 'wiki':
