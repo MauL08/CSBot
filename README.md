@@ -45,7 +45,7 @@
 * Mata Kuliah + Kode Mata Kuliah.
 
 ## 10) **Version 1.9 (Latest)**
-* Removing Google Search
+* Removing Google Search.
 * Removing Bug and Increase Performance.
 
 ### More Features Coming Soon :)
