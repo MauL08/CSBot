@@ -50,7 +50,6 @@ module.exports = {
                     name: `${CMD[3]} + <...> + <subject>`,
                     value: `Search :
                             - Image ( <image> )
-                            - Google ( <google> )
                             - Wikipedia ( <wiki> ) \n
                             ===================`
                 },
