@@ -21,7 +21,7 @@ module.exports = {
                 (async () => {
                     args.splice(0,1);
                     const imageQueue = args.join(' ');
-                    const imgRes = await google.scrape(imageQueue, 50);
+                    const imgRes = await google.scrape(imageQueue, process.env.IMAGE_RANGE);
                     message.channel.send(imgRes[Math.floor(Math.random() * imgRes.length)].url)
                 })();
             break;
