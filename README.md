@@ -1,5 +1,5 @@
 # CSBot
-#### Created by [@MosQyy](https://github.com/MosQyy)
+#### Created by [@MauL08](https://github.com/MauL08)
 
 ## 1) **Version 1.0**
 * List Schedule on Computer Science Semester 114
